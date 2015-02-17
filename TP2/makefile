@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS= -Wall
 LDFLAGS=
-EXEC= onepiece
+EXEC= opengl
 SRC= main.cpp
 HEADER=
 OBJ= $(SRC:.cpp=.o)
@@ -10,8 +10,8 @@ OBJH= $(HEADER:.h=.o)
 all: $(EXEC)
 
 
-onepiece: $(OBJH) $(OBJ)
-	$(CC) $^ -o openGL -lSDL -lGL -lGLU $(LDFLAGS)
+opengl: $(OBJH) $(OBJ)
+	$(CC) $^ -o openGL -lsfml-graphics -lsfml-window -lsfml-system -lGL -lGLU $(LDFLAGS)
 
 %.o: %.cpp
 	$(CC) -c $^ $(CFLAGS)
